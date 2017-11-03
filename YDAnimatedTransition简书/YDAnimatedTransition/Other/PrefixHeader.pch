@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  印象—月赛
+//
+//  Created by mac on 17/6/6.
+//  Copyright © 2017年 HYD. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import "UIView+HYDView.h"
+#import "UIColor+HYDColor.h"
+
+typedef enum{
+    pushNavigation = 0,
+    popNavigation
+}TransitionType;
+
+#ifdef DEBUG
+#define HYDLog(...) NSLog(__VA_ARGS__)
+#else
+#define HYDLog(...)
+#endif
+
+#define HYDLogFunc HYDLog(@"%s",__func__)
+
+//颜色
+#define HYDColour(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+//配置尺寸
+#define ScreenHeight [[UIScreen mainScreen]bounds].size.height
+#define ScreenWidth  [[UIScreen mainScreen]bounds].size.width
+#define Screen     [[UIScreen mainScreen]bounds]
+
+#endif /* PrefixHeader_pch */
